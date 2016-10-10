@@ -1,0 +1,18 @@
+:host {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%
+}
+.chat {
+    border: 1px solid black;
+    flex: 1;
+    overflow-y: scroll;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+input {
+    margin: 0 5px 5px 5px;
+}

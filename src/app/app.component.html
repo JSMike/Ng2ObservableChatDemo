@@ -1,3 +1,9 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar color="primary">
+  <span>Observable Chat</span>
+</md-toolbar>
+<div #chatWindow class="chat" [scrollTop]="chatWindow.scrollHeight">
+  <div class="msg" *ngFor="let msg of chatLog">
+    <span>{{msg}}</span>
+  </div>
+</div>
+<input #chatInput (keyup.enter)="send()">
