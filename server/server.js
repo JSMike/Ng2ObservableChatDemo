@@ -1,11 +1,8 @@
 const express = require('express');
 const app = express();
 const http = require('http').Server(app);
-const morgan = require('morgan');
 const io = require('socket.io').listen(http);
 const rx = require('rxjs');
-
-app.use(morgan('dev'));
 
 io.on('connection', chat);
 
