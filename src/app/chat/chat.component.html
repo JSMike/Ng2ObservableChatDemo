@@ -1,0 +1,11 @@
+<div #chatWindow class="chat" [scrollTop]="chatWindow.scrollHeight">
+  <div class="msg" *obsStreamOut="let chat for chat$">
+    <span class="chat-time">{{ chat.date | date:"hh:mm:ss" }}</span>
+    <span class="chat-name">{{ chat.name }}</span>:
+    <span class="chat-message">{{ chat.message }}</span>
+  </div>
+</div>
+<div class="input-row">
+  <md-input class="input-name" placeholder="Name" [(ngModel)]="name"></md-input>
+  <md-input class="input-chat" placeholder="Chat" [(ngModel)]="chatInput" (keyup.enter)="send()"></md-input>
+</div>

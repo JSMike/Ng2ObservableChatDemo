@@ -1,0 +1,38 @@
+:host {
+    display: flex;
+    flex-flow: column nowrap;
+    height: inherit;
+    width: inherit;
+}
+
+.chat {
+    border: 1px solid black;
+    flex: 1;
+    overflow-y: scroll;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.chat-time {
+    color: #999999;
+}
+
+.chat-name {
+    font-weight: 700;
+}
+
+.input-row {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.input-chat {
+    flex: 1;
+}
+
+md-input {
+    margin: 0 5px 5px 5px;
+}

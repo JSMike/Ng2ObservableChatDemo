@@ -9,6 +9,10 @@ io.on('connection', chat);
 function chat(socket) {
   console.log('New Connection');
   rx.Observable.fromEvent(socket, 'msg')
+    .map((msg) => {
+      msg.date = (new Date()).toISOString();
+      return msg;
+    })
     .subscribe((msg) => {
       socket.emit('chat', msg)
     });
