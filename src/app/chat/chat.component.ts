@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import * as io from 'socket.io-client';
 
@@ -8,6 +8,7 @@ import * as io from 'socket.io-client';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent {
+  @Input() server: string;
   socket: SocketIOClient.Socket;
   chat$: Observable<any>;
   chatInput: string;
@@ -15,7 +16,7 @@ export class ChatComponent {
 
   constructor() {
     this.name = 'Anonymous';
-    this.socket = io.connect('http://localhost:3000');
+    this.socket = io.connect(this.server || 'http://localhost:3000');
     this.chat$ = Observable.fromEvent(this.socket, 'chat');
   }
 
